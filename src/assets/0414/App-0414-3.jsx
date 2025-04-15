@@ -1,6 +1,6 @@
 // 子元件
 function MyComponent(props) {
-//    查看props物件
+    //    查看props物件
     console.log(props)
 
     // 執行父元件傳送過來的c屬性函式
@@ -10,20 +10,20 @@ function MyComponent(props) {
     return <>
         <div>我是子元件，帶有主元件傳遞過來的屬性內容為「{props.a}」</div>
         <div>我是子元件，帶有主元件傳遞過來的屬性內容為「{props.b}」</div>
-        {props.c()}  
+        {props.c()}
     </>
 
 }
+
 // 子元件
 // 由於props是物件，所以可以使用解構賦值，來取用資料
-function MyComponent2({a,b,c}) {
+function MyComponent2({ a, b, c, d }) {
     // 呼叫c屬性的方法
-  
     return <>
-        <div>第一個屬性{a} </div>
-        <div>第一個屬性{b} </div>
-        <div>第一個屬性{c()} </div>
-        <div>第一個屬性{console.log(d)} </div>            
+        <div>第一個屬性:{a} </div>
+        <div>第一個屬性:{b} </div>
+        <div>第一個屬性:{c()} </div>
+        <div>第一個屬性:{console.log(d)} </div>
     </>
 }
 
@@ -31,7 +31,7 @@ function MyComponent2({a,b,c}) {
 function App() {
     return (
         <>
-            {/* 回條函式=>callback function */}
+            {/* 回調函式=>callback function */}
             <MyComponent
                 a="我是屬性a"
                 b="我是屬性b"
@@ -39,11 +39,10 @@ function App() {
             />
 
             <MyComponent2
-                a="我是屬性a"
-                b="我是屬性b"
-                c={() => { console.log("我是屬性c") }}
+                a="我是屬性2a"
+                b="我是屬性2b"
+                c={() => { console.log("我是屬性2c") }}
             />
-
         </>
     )
 }
