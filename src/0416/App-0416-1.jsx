@@ -82,6 +82,7 @@ function App() {
                                                             minute:'numeric'
                                                         })   
                                                         }
+                                                        <br />
                                                         
                                                         {/* 天氣圖:使用執行路徑，所以要放在public資料夾中，才讀得到 */}
                                                         {/* <img src="/weatherIcon/晴時多雲.svg" alt="" /> */}
