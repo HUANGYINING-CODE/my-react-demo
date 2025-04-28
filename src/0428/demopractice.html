@@ -46,7 +46,7 @@
     <div id="page3">page3
         <div class="buttons">
             <button id="btn4" onclick="changeToPage2()">上一步</button>
-            <button id="btn5" onclick="changeToPage4()">下一步</button>
+            <!-- <button id="btn5" onclick="changeToPage4()">下一步</button> -->
         </div>
     </div>
 
@@ -57,15 +57,24 @@
             page1.style.display = "none"
             let page2 = document.querySelector("#page2");
             page2.style.display = "block"
+            page3.style.display="none"
+        }
+
+        function changeToPage3() {
+            let page2 = document.querySelector("#page2");
+            page2.style.display = "none"
+            let page3 = document.querySelector("#page3");
+            page3.style.display = "block"
         }
 
         function changeToPage1() {
-            let page2 = document.querySelector("#page2");
-            page2.style.display = "none"
+            let page3 = document.querySelector("#page3");
+            page3, page2.style.display = "none"
             let page1 = document.querySelector("#page1");
             page1.style.display = "block"
         }
 
+        
     </script>
 </body>
 
