@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 200px;
+            width: 750px;
+            border: 1px solid #000;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-content: end;
+        }
+
+        #page2 {
+            display: none;
+        }
+        
+        #page3 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page1">page1
+        <div class="buttons">
+            <button id="btn1" onclick="changeToPage2()">下一步</button>
+        </div>
+    </div>
+
+    <div id="page2">page2
+        <div class="buttons">
+            <button id="btn2" onclick="changeToPage1()">上一步</button>
+            <button id="btn3" onclick="changeToPage3()">下一步</button>
+        </div>
+    </div>
+
+    <div id="page3">page3
+        <div class="buttons">
+            <button id="btn4" onclick="changeToPage2()">上一步</button>
+            <button id="btn5" onclick="changeToPage4()">下一步</button>
+        </div>
+    </div>
+
+
+    <script>
+        function changeToPage2() {
+            let page1 = document.querySelector("#page1");
+            page1.style.display = "none"
+            let page2 = document.querySelector("#page2");
+            page2.style.display = "block"
+        }
+
+        function changeToPage1() {
+            let page2 = document.querySelector("#page2");
+            page2.style.display = "none"
+            let page1 = document.querySelector("#page1");
+            page1.style.display = "block"
+        }
+
+    </script>
+</body>
+
+</html>
