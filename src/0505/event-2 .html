@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+
+        #two {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+        }
+
+        #three {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>當父元素與子元素都綁定相同的事件時發生
+        <ul>
+            <li>冒泡(bubble) => 執行順序是「內->外」=>預設值順序為 false</li>
+            <li>捕獲(capture) => 執行順序是「外->內」=> true</li>
+            <li>若不想讓事件傳遞,可利用event.stopPropagation()取消</li>
+        </ul>
+    </h2>
+    <hr>
+    <div id="one">one
+        <div id="two">two
+            <div id="three">
+                three
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 冒泡順序(內到外)
+        // document.getElementById("one") .addEventListener("click",()=>{
+        //     console.log("one");
+        //     alert("one");
+        // })
+
+        // document.getElementById("two") .addEventListener("click",()=>{
+        //     console.log("two");
+        //     alert("two");
+        // })
+
+        // document.getElementById("three") .addEventListener("click",()=>{
+        //     console.log("three");
+        //     alert("three");
+        // })
+
+        //  補獲順序 (外到內)
+        // document.getElementById("one").addEventListener("click", () => {
+        //     console.log("one");
+        //     alert("one");
+        // }, true)
+
+        // document.getElementById("two").addEventListener("click", () => {
+        //     console.log("two");
+        //     alert("two");
+        // }, true)
+
+        // document.getElementById("three").addEventListener("click", () => {
+        //     console.log("three");
+        //     alert("three");
+        // }, true)
+
+
+        // 若不想讓事件傳遞，可利用event.stopPropagation()取消
+        // document.getElementById("one").addEventListener("click", (e) => {
+        //     e.stopPropagation();
+        //     console.log("one");
+        //     alert("one");
+        // })
+
+        // document.getElementById("two").addEventListener("click", (e) => {
+        //     e.stopPropagation();
+        //     console.log("two");
+        //     alert("two");
+        // })
+
+        // document.getElementById("three").addEventListener("click", (e) => {
+        //     e.stopPropagation();
+        //     console.log("three");
+        //     alert("three");
+        // })
+
+    </script>
+
+</body>
+
+</html>

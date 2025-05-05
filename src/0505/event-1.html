@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件處理</title>
+</head>
+
+<body>
+    <!--  Javascript綁定事件方法一:html行內綁定 -->
+    <input type="button" id="btn1" value="送出1" onclick="sent(1)"> <!-- "onclick" 行內綁定要加on-->
+    <script>
+        function sent1() {
+            console.log(`html行內榜定`);
+            console.log(e)
+        }
+    </script>
+
+    <!-- Javascript綁定事件方法二: Javascript 敘述綁定-->
+    <!-- 被綁定的html元素必須是id -->
+    <input type="button" id="btn2" value="送出2">
+    <script>
+        btn2.onclick = function (e) {
+            console.log("Javascript敘述規定");
+            console.log(e);
+        }
+    </script>
+
+    <!-- Javascript綁定事件方法三:事件監聽函式 -->
+    <input type="button" id="btn3" value="送出3">
+    <script>
+        //  let btn3=document.getElementById("btn3");
+         let btn3=document.querySelector("#btn3");
+         function send3(e){
+            console.log("事件監聽函式2")
+            console.log(e)
+         }
+
+        btn3.addEventListener("click", send3);
+        btn3.addEventListener("click", (e)=>{
+            console.log("事件監聽函式1")
+            console.log(e)
+        });
+    </script>
+
+    <!-- 當視窗改變大小時，被觸發 -->
+     <script>
+        window.addEventListener("resize",(e)=>{
+            // console.log("視窗已經改變了");
+            // console.log(e);
+            // 當視窗改變大小時，取得目前寬度與高度
+            console.log("寬高1:"+innerWidth,innerHeight);
+            console.log("寬高2"+e.target.innerWidth,e.target.innerHeight);
+        })
+     </script>
+<script>
+    window.addEventListener("resizw",(e)=>{
+
+    })
+</script>
+</body>
+
+</html>
