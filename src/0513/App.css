@@ -1,0 +1,42 @@
+.cssAnim1 {
+    border: 1px solid red;
+    width: 200px;
+    height: 200px;
+    display: block;
+    overflow: hidden;
+    /* 超出紅框範圍隱藏 */
+}
+
+.cssAnim1 img {
+    width: 100%;
+    transition: all .3s linear;
+}
+
+.imgScale img {
+    transform: scale(1.5);
+}
+
+a {
+    text-decoration: underline;
+    color: red;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.ttpShow {
+    display: none;
+
+}
+
+#ttpPanel {
+    padding: 15px;
+    width: 200px;
+    text-align: left;
+    border: 3px solid #ccc;
+    position: absolute;
+    z-index: 99;
+    background-color: #fff;
+    display: none;
+}
