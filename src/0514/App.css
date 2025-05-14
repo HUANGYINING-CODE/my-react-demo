@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {}
+
+#wrapper {
+    /* border: 1px solid red; */
+    width: 960px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* 按鈕區 */
+#filterBtn {
+    padding: 30px;
+}
+
+#filterBtn a {
+    border: 1px solid #ddd;
+    margin: 0 10px;
+    padding: 5px 30px;
+    border-radius: 30px;
+    background: linear-gradient(#fff 40%, #ddd 100%);
+}
+
+#filterBtn a:hover {
+    background: #fff;
+}
+
+/* 作用中按鈕被左鍵一下時，變色 */
+/* active類別是動態給的 */
+#fikterBtn a.active {
+    color: red;
+    font-weight: bold
+}
+
+/* 圖片區 */
+#filterList ul {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* overflow: hidden;  */ /* 搭配float */ 
+}
+
+#filterList ul li {
+    margin: 5px;
+    width: 150px;
+    /* float: left; */
+}
+
+#filterList ul li img{
+    width: 150px;
+}

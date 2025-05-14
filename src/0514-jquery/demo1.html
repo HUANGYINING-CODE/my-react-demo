@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋轉木馬</title>
+    <style>
+        #wrapper {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        #carousel {
+            background-color: #ccc;
+            padding: 5px;
+        }
+
+        #carousel img {
+            width: 150px;
+            height: 120px;
+            margin: 5px;
+            /* 垂直對齊靠上(靠下)是為了要取消HTML5所預留的圖片下方的空白 */
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>旋轉木馬</h1>
+        <hr>
+
+        <div id="carousel">
+            <ul>
+                <li> <img src="./jQuery/images/01.jpg" alt=""></li>
+                <li> <img src="./jQuery/images/02.jpg" alt=""></li>
+                <li> <img src="./jQuery/images/03.jpg" alt=""></li>
+                <li> <img src="./jQuery/images/04.jpg" alt=""></li>
+                <li> <img src="./jQuery/images/05.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+
+    <!-- 旋轉木馬主程式 -->
+    <script src="./jQuery/js/jquery.jcarousellite.min.js"></script>
+
+    <!-- 自訂的JS -->
+    <script>
+        $(function () {
+            $('#carousel').jCarouselLite({
+                // 多久時間動一下
+                auto:2000,
+                // 每次輪播的張數
+                scroll:2,
+                // 每次可見張數
+                visible:2,
+                // 輪播速度
+                speed:300,
+            })
+        });
+    </script>
+</body>
+
+</html>
