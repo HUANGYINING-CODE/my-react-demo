@@ -116,7 +116,7 @@ export default function App() {
         <>
             <div style={{ textAlign: "center" }}>
                 <h1>取得遠端資料</h1><hr />
-                <SearchBox onSearchHandler={onSearchHandler} filterString={filterString} style={{ margin }} />
+                <SearchBox onSearchHandler={onSearchHandler} filterString={filterString} />
                 <div style={{ display: "flex", flexwrap: "wrap", jusityContent: "center" }} ref={listRef}>
                     <ShowPhoto />
                 </div>
