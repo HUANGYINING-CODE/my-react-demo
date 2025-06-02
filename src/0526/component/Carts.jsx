@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { CartContext } from "../store";
+
 export default function Carts() {
+    const [state, dispatch] = useContext(CartContext);
     return (
         <>
             {/* 灰底色 */}
@@ -6,48 +10,78 @@ export default function Carts() {
                 <table className="table align-middle">
                     <tbody>
                         {/* 一列5欄 */}
-                        <tr >
-                            <td><a href="#">x</a></td>
-                            <td>
-                                <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1406&q=80"
-                                    className="table-img"
-                                    alt="..." />
-                            </td>
-                            <td>
-                                產品名稱
-                                <br />
-                                <small className="text-muted">NT.200</small>
-                            </td>
-                            <td>
-                                <select name="" id="" className="form-select"></select>
-                            </td>
-                            <td className="text-end">NT.600</td>
-                        </tr>
-                        <tr >
-                            <td><a href="#">x</a></td>
-                            <td>
-                                <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1406&q=80"
-                                    className="table-img"
-                                    alt="..." />
-                            </td>
-                            <td>
-                                產品名稱
-                                <br />
-                                <small className="text-muted">NT.200</small>
-                            </td>
-                            <td>
-                                <select name="" id="" className="form-select"></select>
-                            </td>
-                            <td className="text-end">NT.400</td>
-                        </tr>
+                        {state.cartList.map((item) => {
+                            return (
+                                <tr key={item.id}>
+                                    <td>
+                                        <button
+                                            type="button"
+                                            className="btn btn-sm"
+                                            onClick={(e) => {
+                                                dispatch({
+                                                    type: "REMOVE_CART_ITEM",
+                                                    payload: {
+                                                        ...item,
+                                                    },
+                                                });
+                                            }}
+                                        >
+                                            x
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <img
+                                            src={item.img}
+                                            className="table-img"
+                                            alt={item.title}
+                                        />
+                                    </td>
+                                    <td>
+                                        {item.title}
+                                        <br />
+                                        <small className="text-muted">NT$ {item.price}</small>
+                                    </td>
+                                    <td>
+                                        <select
+                                            name=""
+                                            id=""
+                                            className="form-select"
+                                            value={item.quantity}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                dispatch({
+                                                    type: 'CHANGE_CART_QUANTITY',
+                                                    payload: {
+                                                        ...item,
+                                                        quantity: parseInt(e.target.value),
+                                                    },
+                                                });
+                                            }}
+                                        >
+                                            {[Array(20)].map((_, i) => {
+                                                return (
+                                                    <option value={i + 1} key={i}>
+                                                        {i + 1}
+                                                    </option>
+                                                );
+                                            })}
+                                        </select>
+
+                                    </td>
+                                    <td className="text-end">NT$ {item.quantity * item.price}</td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td className="text-end" colSpan={5}>總金額 NT.1000</td>
+                            <td className="text-end" colSpan={5}>
+                                總金額 NT$ {state.totle || 0}
+                            </td>
                         </tr>
                     </tfoot>
                 </table>
-            </div>
+            </div >
         </>
     )
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 // import App from './App.jsx'
-import App from './0527-useReducer/App'
+import App from './0526/App'
 // import './index.css'
 // import './style.css'
 import { BrowserRouter } from 'react-router-dom'
