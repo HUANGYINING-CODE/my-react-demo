@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            background-color: #003;
+        }
+
+        .wrap {
+            width: 1200px;
+            display: flex;
+            margin: auto;
+        }
+
+        .item {
+            width: 400px;
+            margin: 15px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid pink;
+            transform: translateY(0px);
+            transition: .5s;
+        }
+
+        .item:hover {
+            transform: translateY(-50px);
+        }
+
+        .item img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .item h2 {
+            border-bottom: 1px solid #888;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .item .txt {
+            padding: 20px;
+            position: relative;
+        }
+
+        .item .txt::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 0;
+            top: 0;
+
+            border-top: 50px solid transparent;
+            border-left: 184px solid rgb(255, 255, 255);
+            border-right: 184px solid rgb(255, 255, 255);
+            transform: translateY(-100%);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="./jeonghan.jpg" alt="">
+            <div class="txt">
+                <h2> 人名1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, necessitatibus!</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./jeonghan2.jpg" alt="">
+            <div class="txt">
+                <h2> 人名1 </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, necessitatibus!</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./jeonghan3.jpg" alt="">
+            <div class="txt">
+                <h2> 人名1 </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, necessitatibus!</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
